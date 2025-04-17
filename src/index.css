@@ -1,13 +1,443 @@
+/* Global Styles for Body */
 body {
+  font-family: 'Arial', sans-serif;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #F9FAFB;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* Header Styling */
+.header {
+  background-color: #0F172A; /* Dark Blue background */
+  padding: 20px 0;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease;
+}
+
+/* Navbar Container */
+.navbar {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Styling the list container */
+.nav-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  gap: 30px;
+}
+
+/* Styling individual list items */
+.nav-item {
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Styling the navigation links */
+.nav-link {
+  color: #FFFFFF;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 600;
+  text-transform: uppercase;
+  padding: 10px 15px;
+  border-radius: 5px;
+  position: relative;
+  display: inline-block;
+  transition: color 0.3s, transform 0.3s, background-color 0.3s;
+}
+
+/* Hover Effects on Links */
+.nav-link:hover {
+  color: #0F172A; /* Dark background text color */
+  background-color: #F43F5E; /* Red accent */
+  transform: translateY(-2px); /* Subtle lift effect */
+}
+
+/* Adding an underline animation effect */
+.nav-link:before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 2px;
+  background-color: #F43F5E;
+  transition: width 0.3s ease-in-out;
+}
+
+.nav-link:hover:before {
+  width: 100%;
+}
+
+/* Adding responsiveness */
+@media (max-width: 768px) {
+  .nav-list {
+    flex-direction: column;
+    gap: 15px;
+  }
+}
+
+/* Container for all posts */
+.posts-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: 'Arial', sans-serif;
+  background-color: #f4f7fc;
+}
+
+/* Title of the posts page */
+.title {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #2d3748;
+  margin-bottom: 40px;
+}
+
+/* List of posts */
+.posts-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+  padding: 0;
+  list-style: none;
+}
+
+/* Individual post card */
+.post-card {
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover effect on post card */
+.post-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Post text styling */
+.post-text {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #4a5568;
+  margin-bottom: 15px;
+}
+
+/* Author styling */
+.post-author {
+  font-size: 1rem;
+  color: #718096;
+  margin-bottom: 15px;
+}
+
+/* Avatar styling (for profile image) */
+.post-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+  object-fit: cover;
+  border: 2px solid #4a5568;
+}
+
+/* Header for author section */
+.post-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+/* Image styling (main post image) */
+.post-image {
+  width: 100%;
+  max-width: 100%;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+/* Details (likes, tags) container */
+.post-details {
+  font-size: 0.9rem;
+  color: #4a5568;
+}
+
+/* Likes and tags text */
+.post-likes,
+.post-tags {
+  margin-bottom: 5px;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .posts-list {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+}
+
+/* Global styles or your specific component's CSS file */
+
+@keyframes fadeZoom {
+  0% {
+    opacity: 0.5;
+    transform: scale(0.8);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+  100% {
+    opacity: 0.5;
+    transform: scale(0.8);
+  }
+}
+
+h1 {
+  font-size: 3rem;
+  color: #333;
+  text-align: center;
+  margin-top: 20px;
+  animation: fadeZoom 2s ease-in-out infinite; /* Continuous animation */
+}
+/* Global styles */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f4f7fb;
+  margin: 0;
+  padding: 0;
+}
+
+/* Main container for the UserList */
+.user-list {
+  margin: 30px auto;
+  padding: 20px;
+  max-width: 900px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Title */
+.title {
+  font-size: 2.5rem;
+  text-align: center;
+  color: #4A4A4A;
+  margin-bottom: 30px;
+  font-weight: 600;
+}
+
+/* User items list */
+.user-list__items {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* User item container */
+.user-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #fff;
+  margin: 15px 0;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.user-item:hover {
+  transform: scale(1.02);  /* Slight scale on hover */
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15); /* Shadow effect */
+}
+
+/* Link styles */
+.user-item__link {
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  align-items: center;
+}
+
+/* User details */
+.user-item__content {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.user-item__name {
+  margin-left: 20px;
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: #333;
+  flex-grow: 1;
+}
+
+/* Circular image */
+.user-item__picture {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #007bff; /* Blue border around the image */
+}
+
+/* Pagination controls */
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.pagination__button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 5px;
+  margin: 0 15px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.pagination__button:hover {
+  background-color: #0056b3;
+  transform: translateY(-2px); /* Slight upward movement on hover */
+}
+
+.pagination__button:disabled {
+  background-color: #ddd;
+  cursor: not-allowed;
+}
+
+.pagination__page {
+  font-size: 1.2rem;
+  color: #666;
+  font-weight: 500;
+  margin: 0 20px;
+}
+/* Global styles */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f4f7fb;
+  margin: 0;
+  padding: 0;
+}
+
+/* Main container for the user details page */
+.user-detail {
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 25px;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+}
+
+/* Title and user info */
+.user-detail__header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.user-detail__header h2 {
+  font-size: 2.8rem;
+  color: #333;
+  font-weight: 600;
+}
+
+.user-detail__header img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #007bff;
+  margin-top: 20px;
+  transition: transform 0.3s ease;
+}
+
+.user-detail__header img:hover {
+  transform: scale(1.05); /* Hover zoom effect */
+}
+
+.user-detail__info p {
+  font-size: 1.2rem;
+  color: #555;
+  margin-bottom: 15px;
+}
+
+/* Posts section */
+.user-detail__posts {
+  margin-top: 40px;
+}
+
+.user-detail__posts h3 {
+  font-size: 2rem;
+  color: #333;
+  text-align: center;
+  margin-bottom: 25px;
+  font-weight: 500;
+}
+
+.user-detail__posts ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.user-detail__posts li {
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.user-detail__posts li:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+.user-detail__posts li p {
+  font-size: 1.3rem;
+  color: #333;
+  font-weight: 500;
+}
+
+.user-detail__posts li img {
+  max-width: 100%;
+  border-radius: 10px;
+  margin-top: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .user-detail {
+    padding: 15px;
+  }
+
+  .user-detail__header h2 {
+    font-size: 2rem;
+  }
+
+  .user-detail__info p {
+    font-size: 1.1rem;
+  }
 }
